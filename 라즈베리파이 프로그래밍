@@ -1,0 +1,15 @@
+#define OUTPUT_PIN 2
+#include <stdio.h>
+#include <wiringPi.h>
+void main()
+{
+    wiringPiSetupGpio();
+    pinMode(OUTPUT_PIN, OUTPUT);
+    for (;;)
+    {
+        digitalWrite(OUTPUT_PIN, LOW);
+        delay(200);
+        digitalWrite(OUTPUT_PIN, HIGH);
+        delay(200);
+    }
+}
