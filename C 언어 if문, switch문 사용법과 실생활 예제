@@ -1,0 +1,101 @@
+*1. 자판기
+#include <stdio.h>
+
+int main()
+{
+    int money;
+    printf("돈을 넣어주세요: ");
+    scanf_s("%d", &money);
+
+    if (money % 500 == 0 || money / 500 != 0)
+    printf("음료수가 나왔습니다.\n");
+    printf("%d원이 반환되었습니다.\n", money % 500);
+}
+//////////////////////////////////////////////////////////////////////////
+*2. 미용실 할인
+#include <stdio.h>
+
+int main()
+{
+    int age;
+    printf("나이 입력: ");
+    scanf_s("%d", &age);
+
+    if (age < 20)
+    {
+        printf("30%% 할인");
+    }
+    else
+    {
+        printf("정가");
+    }
+}
+//////////////////////////////////////////////////////////////////////////
+*3. 기상청 예보
+#include <stdio.h>
+
+int main()
+{
+    float windchill1, windchill2;
+    printf("최고 체감 온도: ");
+    scanf_s("%f %f", &windchill1, &windchill2);
+
+    
+    if (windchill1 && windchill2 <= 35)
+    {
+        printf("폭염 경보 발령\n");
+    }
+
+    else if (33 <= windchill1 && windchill2 < 35)
+    {
+        printf("폭염 주의보 발령\n");
+    }
+    else
+    {
+        printf("이상무\n");
+    }
+
+    return 0;
+}
+//////////////////////////////////////////////////////////////////////////
+*4. 동전 던지기
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL)); 
+
+    int coin = rand() % 2;
+
+    switch (coin)
+    {
+    case 0: printf("뒷면\n"); break; 
+    case 1: printf("앞면\n"); break; 
+    default: printf("동전 던지기 게임입니다.\n"); break;
+    }
+
+    return 0;
+}
+//////////////////////////////////////////////////////////////////////////
+*5. 가위바위보
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+    int rsp = rand() % 3; 
+
+    switch (rsp)
+    {
+    case 0: printf("가위\n"); break;
+    case 1: printf("바위\n"); break;
+    case 2: printf("보\n"); break;
+    default: printf("비밀\n"); break;
+    }
+
+    return 0;
+}
